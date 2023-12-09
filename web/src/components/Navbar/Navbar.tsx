@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { AlignJustify, X } from "lucide-react"
 import styles from './Navbar.module.css'
+import ButtonLink from "../ButtonLink/ButtonLink"
 
 export default function Navbar() {
 
@@ -34,6 +35,7 @@ export default function Navbar() {
     
     return (
         <header
+            data-testid="navbar"
             className={`flex p-8 fixed top-0 left-0 right-0 z-50 transition-all 
             ${scrolling ? "bg-gray-700" : ""}`}>
             <div className="flex flex-1 items-center">
@@ -46,8 +48,8 @@ export default function Navbar() {
             </div>
             {/* DISPOSIVOS MENORES */}
             {menuOpen && (
-                <div className={`fixed top-0 left-0 right-0 bottom-0 bg-gray-700 flex items-center justify-center ${styles['animate-fadeIn']}`}>
-                    <X size={60} onClick={toggleMenu} className="absolute text-orange-700 top-0 right-0 m-4 sm:m-12"/>
+                <div data-testid="menu" className={`fixed top-0 left-0 right-0 bottom-0 bg-gray-700 flex items-center justify-center ${styles['animate-fadeIn']}`}>
+                    <X size={60} data-testid="toggle-close" onClick={toggleMenu} className="absolute text-orange-700 top-0 right-0 m-4 sm:m-12"/>
                     <ul className="flex flex-col gap-16 text-white p-12 items-center justify-center text-1xl">
                         <li>
                             <Link href="/" className="hover:bg-gray-600 transition-all p-8">
@@ -103,16 +105,13 @@ export default function Navbar() {
                     </Link>
                 </li>
                 <li>
-                    <Link
-                        href="/"
-                        className="border border-orange-700 p-6 hover:bg-orange-700 transition-all"
-                    >
+                    <ButtonLink borderColor="orange-700" hoverColor="orange-700" href="/">
                         Acessar minha conta
-                    </Link>
+                    </ButtonLink>
                 </li>
             </ul>
             <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
-                <AlignJustify size={40} className="text-orange-700" />
+                <AlignJustify data-testid="toggle-button" size={40} className="text-orange-700" />
             </div>
         </header>
     )
