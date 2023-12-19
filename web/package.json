@@ -12,10 +12,12 @@
     "test:coverage": "npm jest --coverage"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
     "lucide-react": "^0.294.0",
     "next": "14.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^4.12.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^9.3.3",

@@ -6,6 +6,17 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --transparent: rgba(0, 0, 0, 0);
+  --orange-50: #fff5e6;
+  --orange-100: #ffdcb1;
+  --orange-200: #ffcf8c;
+  --orange-300: #ffbf57;
+  --orange-400: #ffac36;
+  --orange-500: #ff9404;
+  --orange-600: #e68004;
+  --orange-700: #cc6903;
+  --orange-800: #b35402;
+  --orange-900: #944c02;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,14 +29,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
-
-
-
-
